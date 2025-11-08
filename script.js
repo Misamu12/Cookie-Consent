@@ -1,27 +1,24 @@
-// Function to check if the user already accepted cookies
 function checkCookieConsent() {
   return localStorage.getItem("cookieConsent") === "true";
 }
 
-// Function to show the cookie popup
-function showCookiePopup() {
+//
+function voirCookiePopup() {
   const popup = document.getElementById("cookie-popup");
   popup.style.display = "flex";
 }
 
-// Function to hide the cookie popup and save the consent
-function acceptCookies() {
+function accepteCookies() {
   localStorage.setItem("cookieConsent", "true");
   const popup = document.getElementById("cookie-popup");
   popup.style.display = "none";
 }
 
-// Event listener for when the user accepts cookies
+
 document
   .getElementById("accept-cookies")
-  .addEventListener("click", acceptCookies);
+  .addEventListener("click", accepteCookies);
 
-// Check if the user has already accepted cookies
 if (!checkCookieConsent()) {
-  showCookiePopup();
+  voirCookiePopup();
 }
